@@ -8,5 +8,11 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    r = requests.get(sys.argv[1])
-    print(r.headers.get('X-Request-Id'))
+    url = sys.argv[1]  # Get the URL from command line arguments
+
+    response = requests.get(url)  # Send a GET request to the URL
+    x_request_id = response.headers.get('X-Request-Id')  # Get the value of the X-Request-Id variable from the response header
+
+    print('X-Request-Id:', x_request_id)  # Print the value of the X-Request-Id variable
+
+    
